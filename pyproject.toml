@@ -1,0 +1,16 @@
+[project]
+name = "dataguardian"
+version = "0.1.0"
+
+dependencies = [
+    "pandas",
+    "numpy",
+    "pydantic",
+    "pyyaml",
+    "jinja2",
+    "typer",
+    "rich"
+]
+
+[project.scripts]
+dataguardian = "dataguardian.cli:app"
