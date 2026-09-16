@@ -1,16 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "dataguardian"
 version = "0.1.0"
+description = "Data profiling and quality assessment library"
+requires-python = ">=3.11"
 
 dependencies = [
-    "pandas",
-    "numpy",
-    "pydantic",
-    "pyyaml",
-    "jinja2",
-    "typer",
-    "rich"
+    "pandas>=2.0"
 ]
 
-[project.scripts]
-dataguardian = "dataguardian.cli:app"
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
