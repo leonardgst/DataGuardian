@@ -1,16 +1,25 @@
 import pandas as pd
 
-from dataguardian import profile_dataframe
-from dataguardian.report import save_summary_json
+from dataguardian import (
+    generate_html_report,
+    profile_dataframe,
+    save_summary_json,
+)
 
-df = pd.read_csv("examples/dirty_customers.csv")
+df = pd.read_csv(
+    "examples/dirty_customers.csv"
+)
 
 profile = profile_dataframe(df)
 
-print("\nIssues found:")
-for issue in profile.issues:
-    print(issue)
+save_summary_json(
+    profile,
+    "artifacts/summary.json",
+)
 
-save_summary_json(profile, "summary.json")
+generate_html_report(
+    profile,
+    "artifacts/report.html",
+)
 
-print("\nsummary.json generated successfully")
+print("Report generated successfully.")
