@@ -1,0 +1,5 @@
+id,email,status
+1,test@test.fr,ACTIVE
+1,,ACTIVE
+3,,ACTIVE
+4,,ACTIVE
